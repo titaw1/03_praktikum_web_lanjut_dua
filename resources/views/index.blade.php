@@ -8,14 +8,17 @@
     </div>
 
     <div class="row tm-welcome-row">
-        <article class="col-lg-6 tm-media">
-            <img src="img/img-3x2-01.jpg" alt="Welcome image" class="img-fluid tm-media-img" />
+        @foreach ($data as $item)
+          <article class="col-lg-6 tm-media">
+            <img src="{{$item -> featured_image}}" alt="Welcome image" class="img-fluid tm-media-img" />
             <div class="tm-media-body">
-                <a href="#" class="tm-article-link"><h3 class="tm-article-title text-uppercase">Best collection</h3></a>
-                <p>Aliquam purus arcu, congue a gravida ac, facilisis vel erat. Maecenas pretium sem.</p>
+                <a href="#" class="tm-article-link"><h3 class="tm-article-title text-uppercase">{{$item -> title}}</h3></a>
+                <p>{{$item -> content}}</p>
             </div>
         </article>
-        <article class="col-lg-6 tm-media">
+        @endforeach
+
+        {{-- <article class="col-lg-6 tm-media">
             <img src="img/img-3x2-02.jpg" alt="Welcome image" class="img-fluid tm-media-img" />
             <div class="tm-media-body">
                 <a href="#" class="tm-article-link"><h3 class="tm-article-title text-uppercase">New Design for your website</h3></a>
@@ -35,7 +38,7 @@
                 <a href="#" class="tm-article-link"><h3 class="tm-article-title text-uppercase">Simple touch</h3></a>
                 <p>Please tell your friends about TemplateMo website. Thank you. Title / Text #666</p>
             </div>
-        </article>
+        </article> --}}
     </div>
 
     <div class="row tm-welcome-row-2">
